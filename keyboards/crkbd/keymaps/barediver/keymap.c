@@ -41,13 +41,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 			// colemak DH
 	[_COLEMAKDH] = LAYOUT(
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-	    LT(_NUMPAD,KC_TAB), 	KC_Q, 	 KC_W, 	  KC_F,    KC_P,    KC_B, 					LT(_SWITCH,KC_J),    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
+	LT(_NUMPAD,KC_ESC), KC_Q, 	 KC_W, 	  KC_F,    KC_P,    KC_B, 		    LT(_SWITCH,KC_J),    KC_L,    KC_U,    KC_Y, KC_SCLN, KC_BSPC,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-	    KC_LSFT,    KC_A,    KC_R,    KC_S,    KC_T,    KC_G, 						  KC_M,    KC_N,    KC_E,    KC_I, KC_O, KC_QUOT,
+	LSFT_T(KC_TAB),    KC_A,    KC_R,    KC_S,    KC_T,    KC_G, 			     KC_M,    KC_N,   KC_E,   KC_I,   KC_O,   KC_QUOT,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, 						  KC_K,    KC_H, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
+		KC_LCTL,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, 						  KC_K,  KC_H, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-										 KC_LGUI,   MO(_NUM),  KC_SPC, 	KC_ENT,    MO(_SYM), KC_LALT
+										 KC_LGUI,   MO(_MOVE),  KC_SPC, 	KC_ENT,   MO(_SYM), KC_LALT
 										//`--------------------------'  `--------------------------'
 	),
 
@@ -61,7 +61,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//|--------+--------+--------+-------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 		KC_TRNS,   KC_NO,   KC_NO,   KC_NO,   KC_WH_D,   KC_PGDN,					     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-											KC_TRNS, KC_TRNS,  KC_TRNS,     KC_TRNS,   MO(_COMMAND), KC_TRNS
+											KC_TRNS,  KC_TRNS,  KC_TRNS,     KC_TRNS,   MO(_COMMAND), KC_TRNS
 										//`--------------------------'  `--------------------------'
 	),
 
@@ -93,13 +93,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     	// movement
 	[_MOVE] = LAYOUT(
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-	LT(0,KC_NO),   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 					   KC_HOME,  KC_UP,  KC_PGUP,   KC_NO,   KC_NO,   KC_NO,
+	LT(0,KC_NO),   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 					  KC_NO,   KC_HOME,  KC_UP,  KC_PGUP,    KC_NO,   KC_NO,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-	      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 					   KC_LEFT,  KC_ENT, KC_RGHT,   KC_NO,   KC_NO,   KC_NO,
+	      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 					   KC_NO,  KC_LEFT,  KC_DOWN, KC_RGHT,   KC_NO,   KC_NO,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		 KC_APP,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 						KC_END, KC_DOWN, KC_PGDN,  KC_DEL,   KC_NO,   KC_NO,
+		 KC_APP,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 						KC_NO, KC_END, KC_DOWN, KC_PGDN,  KC_DEL,    KC_NO,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-		                                      KC_NO,   KC_NO,   KC_NO,    KC_TRNS,   KC_NO,   KC_NO
+		                                      KC_NO,   KC_NO,   KC_NO,    KC_TRNS,   MO(_COMMAND),   KC_NO
 										//`--------------------------'  `--------------------------'
 	),
     	// numpad
@@ -111,7 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 		  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 					   KC_PLUS,   KC_P1,   KC_P2,   KC_P3, KC_SLSH,   KC_NO,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-									   OSM(MOD_MEH),   KC_NO,   KC_TRNS,     KC_ENT,   KC_P0,  KC_PDOT
+									   OSM(MOD_MEH),   _COLEMAKDH,   KC_TRNS,     KC_ENT,   KC_P0,  KC_PDOT
 										//`--------------------------'  `--------------------------'
 	),
 		// colemak
@@ -155,7 +155,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	)
 
 };
-
 
 // it appears that these are different to the board numbering.
 // when you specify n here, it lightss up n+1 on the board diagram - actually may be an entirely different pattern
