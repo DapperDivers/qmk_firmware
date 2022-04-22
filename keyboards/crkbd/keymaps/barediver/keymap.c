@@ -93,11 +93,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     	// movement
 	[_MOVE] = LAYOUT(
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-	LT(0,KC_NO),   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 					  KC_NO,   KC_HOME,  KC_UP,  KC_PGUP,    KC_NO,   KC_NO,
+	 KC_ESC,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 					  KC_NO,   KC_HOME,  KC_UP,  KC_END,    KC_NO,   KC_NO,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 	      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 					   KC_NO,  KC_LEFT,  KC_DOWN, KC_RGHT,   KC_NO,   KC_NO,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		 KC_APP,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 						KC_NO, KC_END, KC_DOWN, KC_PGDN,  KC_DEL,    KC_NO,
+		 KC_APP,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 						KC_NO, KC_PGUP , KC_NO, KC_PGDN,  KC_DEL,    KC_NO,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
 		                                      KC_NO,   KC_NO,   KC_NO,    KC_TRNS,   MO(_COMMAND),   KC_NO
 										//`--------------------------'  `--------------------------'
@@ -105,13 +105,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     	// numpad
 	[_NUMPAD] = LAYOUT(
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-	LT(0,KC_NO),   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO, 					   KC_CIRC,   KC_P7,   KC_P8,   KC_P9, KC_ASTR, KC_BSPC,
+	LT(0,KC_NO),   KC_NO,   KC_NO,   KC_NO,   KC_NO, KC_NO, 					   KC_CIRC,   KC_P7,   KC_8,   KC_9, KC_ASTR, KC_BSPC,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-	      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 					   KC_MINS,   KC_P4,   KC_P5,   KC_P6,  KC_EQL,  KC_DEL,
+	      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 					   KC_MINS,   KC_4,   KC_5,   KC_6,  KC_EQL,  KC_DEL,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-		  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 					   KC_PLUS,   KC_P1,   KC_P2,   KC_P3, KC_SLSH,   KC_NO,
+		  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, 					   KC_PLUS,   KC_1,   KC_2,   KC_3, KC_SLSH,   KC_NO,
 	//|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-									   OSM(MOD_MEH),   _COLEMAKDH,   KC_TRNS,     KC_ENT,   KC_P0,  KC_PDOT
+									   OSM(MOD_MEH),   _COLEMAKDH,   KC_TRNS,     KC_ENT,   KC_0,  KC_PDOT
 										//`--------------------------'  `--------------------------'
 	),
 		// colemak
@@ -143,7 +143,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	// layer switcher
 	[_SWITCH] = LAYOUT(
 	//,-----------------------------------------------------.                    ,-----------------------------------------------------.
-	      TO(0),   TO(1),   TO(2),   TO(3),   TO(4),   TO(5), 					     KC_NO,   TO(7),   KC_NO,   KC_NO,   KC_NO,   RESET,
+	      TO(0),   TO(1),   TO(2),   TO(3),   TO(4),   TO(5), 					     TO(6),   TO(7),   TO(8),   KC_NO,   KC_NO,   RESET,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
 	      KC_NO,   KC_NO, KC_BRIU,   KC_NO,   KC_NO,   KC_NO, 						 KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO, EEP_RST,
 	//|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
